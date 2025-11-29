@@ -31,6 +31,7 @@ namespace AlphaOfferService
                     .Enrich.WithProperty("Environment", context.HostingEnvironment.EnvironmentName)
                 );
 
+                Log.Information("Ќачато создание модели дл€ определени€ дохода клиента");
                 var modelPath = Path.Combine(AppContext.BaseDirectory, "model.onnx");
                 builder.Services.AddSingleton<IIncomeModel>(new MarkModel(modelPath));
                 Log.Information("—оздана модель дл€ определени€ дохода клиента: {ModelPath}", modelPath);

@@ -6,11 +6,10 @@ namespace AlphaOfferService.AlphaStructure.Services
     public class AlphaBanRepositoryInitializer
     {
         private readonly AlphaBankRepository _repository;
+
         private readonly ILogger<AlphaBanRepositoryInitializer> _logger;
 
-        public AlphaBanRepositoryInitializer(
-            AlphaBankRepository repository,
-            ILogger<AlphaBanRepositoryInitializer> logger)
+        public AlphaBanRepositoryInitializer(AlphaBankRepository repository, ILogger<AlphaBanRepositoryInitializer> logger)
         {
             _repository = repository;
             _logger = logger;
@@ -18,24 +17,24 @@ namespace AlphaOfferService.AlphaStructure.Services
 
         public async Task InitializeDatabase()
         {
-            _logger.LogInformation("Starting database initialization");
+            _logger.LogInformation("Начата инициализация базы данных");
 
             try
             {
                 if (await _repository.Database.CanConnectAsync())
                 {
-                    _logger.LogInformation("Database connection successful");
+                    _logger.LogInformation("База данных инициализирована");
                 }
                 else
                 {
-                    _logger.LogWarning("Database does not exist. Creating database...");
+                    _logger.LogWarning("База данных не найдена. Создание новой базы данных...");
                     await _repository.Database.EnsureCreatedAsync();
-                    _logger.LogInformation("Database created successfully");
+                    _logger.LogInformation("База данных успешно создана");
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                _logger.LogError(ex, "Database initialization failed");
+                _logger.LogError(e, "Произошла ошибка при создании базы данных");
                 throw;
             }
         }
