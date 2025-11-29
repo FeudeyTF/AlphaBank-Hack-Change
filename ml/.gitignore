@@ -1,0 +1,6 @@
+data
+catboost_info
+submission1.csv
+submission2.csv
+.ipynb_checkpoints
+.vscode
