@@ -12,7 +12,8 @@ namespace AlphaOfferService
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddSingleton<IIncomeModel>(new IncomeModel());
+            var modelPath = Path.Combine(AppContext.BaseDirectory, "mark_model.onnx");
+            builder.Services.AddSingleton<IIncomeModel, MarkModel>(provider => new MarkModel(modelPath));
             builder.Services.AddScoped<IClientRepository, AlphaBankClientRepository>();
             builder.Services.AddScoped<IIncomeService, ModelIncomeService>();
 
