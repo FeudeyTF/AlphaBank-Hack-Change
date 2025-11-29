@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AlphaOfferService.AlphaStructure.Entities
 {
-    public class AlphaBankClientRepository : DbContext, IClientRepository
+    public class AlphaBankRepository : DbContext, IClientRepository
     {
         public DbSet<AlphaBankClient> Clients { get; set; }
 
-        public AlphaBankClientRepository(DbContextOptions<AlphaBankClientRepository> options) : base(options)
+        public AlphaBankRepository(DbContextOptions<AlphaBankRepository> options) : base(options)
         {
         }
 
