@@ -1,4 +1,4 @@
-﻿using AlphaOfferService.AlphaStructure.Entities;
+using AlphaOfferService.AlphaStructure.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace AlphaOfferService.AlphaStructure.Services

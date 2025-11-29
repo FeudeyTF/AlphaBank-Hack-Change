@@ -1,4 +1,4 @@
-﻿using AlphaOfferService.AlphaStructure.Clients;
+using AlphaOfferService.AlphaStructure.Clients;
 using AlphaOfferService.Core;
 using Microsoft.AspNetCore.Mvc;
 
