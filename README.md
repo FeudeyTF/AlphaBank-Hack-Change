@@ -71,7 +71,15 @@ Backend-сервис:
 
 # ▶️ Инструкции по запуску (оставлено пустым для заполнения)
 ```
-# 1. Установка зависимостей
+#Библиотеки и версии
+##frontent 
+
+- react 19.2.0
+- react-dom 19.2.0
+- react-router-dom 7.9.6
+- antd 6.0.0
+- axios 1.13.2
+- sass 1.94.2
 
 # Для фронтенда
 sudo apt update && sudo apt upgrade -y
